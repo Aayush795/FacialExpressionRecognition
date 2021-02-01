@@ -92,7 +92,7 @@ while vidcap.more():
             ALARM_ON = False
         cv2.putText(frame, "Eye Ratio: {:.2f}".format(ear), (250, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 
-        if framecount % args["frame_step"] == 0:
+        if framecount % args["frame-step"] == 0:
             prediction, idx, probability = learn.predict(Image(pil2tensor(img_cp, np.float32).div_(225)))
             data.append([framecount, prediction, probability, ear])
 
